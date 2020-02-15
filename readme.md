@@ -11,9 +11,9 @@ Just download the repository and run the main.py file with the python environmen
 python 3  
 numpy  
 scipy  
-scikit-learn
+scikit-learn  
 pillow  
-aggdraw 
+aggdraw  
 numexpr  
 
 ### Installing
