@@ -4,7 +4,7 @@ Some software that allows a user to evolve an image by arranging a collection of
 
 ## Getting Started
 
-then just download the repository and run the main.py file with the previously installed python environment.
+Just download the repository and run the main.py file with the python environment installed as outlined below.
 
 ### Prerequisites
 
