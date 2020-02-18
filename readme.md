@@ -4,8 +4,6 @@ Some software that allows a user to evolve an image by arranging a collection of
 
 ## Getting Started
 
-Just download the repository and run the main.py file with the python environment installed as outlined below.
-
 ### Prerequisites
 
 python 3  
@@ -20,7 +18,7 @@ numexpr
 
 The easiest way to create a Python environment to run this code is to install anaconda and in anaconda prompt use the commands:
 
-conda create -n ImageEvo -c defaults -c conda-forge numpy scipy scikit-learn numexpr matplotlib pillow aggdraw
+conda create -n ImageEvo -c defaults -c conda-forge ipykernel numpy scipy scikit-learn numexpr matplotlib pillow aggdraw
 
 conda activate ImageEvo
 
