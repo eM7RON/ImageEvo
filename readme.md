@@ -28,8 +28,6 @@ then just download the repository and run the main.py file with the previously i
 
 ### Demonstration
 
-![ScreenShot](https://raw.githubusercontent.com/eM7RON/Image-Evolution/tree/master/img/main_menu.PNG)
-
 ## Authors
 
 * **eM7RON (Simon Tucker)** - *Initial work* - [github](https://github.com/eM7RON), [linkedin](https://www.linkedin.com/in/simon-tucker-21838372/)
