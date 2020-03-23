@@ -118,9 +118,20 @@ The examples below were generated using `GPSO` with a single starting image and 
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/343420.svg" alt="Video Maker" width="200"/>
 </p>
 
-## Upcoming Improvements
 
 Eventually I will add other algorithms such as a conventional genetic algorithm. Python is, perhaps, not the best language for this type of thing as it seems quite slow. I have profiled the GPSO algorithm and the bottle neck seems to be the image rendering. This could be eleviated by writing a custom wrapper for the C++ agg library. This would probably take a 2D array as input and parallelize the image rendering by dividing the individuals between threads.
 
+## Authors
 
+* **eM7RON (Simon Tucker)** - *Initial work* - [github](https://github.com/eM7RON), [linkedin](https://www.linkedin.com/in/simon-tucker-21838372/)
+
+## License
+
+This project is licensed under the MIT License
+
+## Acknowledgments
+
+* **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [DOI](http://dx.doi.org/doi:10.1155/2008/143624)
+* **Freepik** - *DNA Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6)
+* **Vectors Markets** - *Pause Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
 
