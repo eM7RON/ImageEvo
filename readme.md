@@ -18,11 +18,11 @@ numexpr
 
 The easiest way to create a Python environment to run this code is to install anaconda and in anaconda prompt use the commands:
 
-conda create -n ImageEvo -c defaults -c conda-forge ipykernel numpy scipy scikit-learn numexpr matplotlib pillow aggdraw
+`conda create -n ImageEvo -c defaults -c conda-forge ipykernel numpy scipy scikit-learn numexpr matplotlib pillow aggdraw`
 
-conda activate ImageEvo
+`conda activate ImageEvo`
 
-python -m ipykernel install --user --name ImageEvo --display-name ImageEvo
+`python -m ipykernel install --user --name ImageEvo --display-name ImageEvo`
 
 then just download the repository and run the main.py file with the previously installed python environment.
 
@@ -119,6 +119,8 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 ## Upcoming Improvements
+
+<b/>
 
 Eventually I will add other algorithms such as a conventional genetic algorithm. Python is, perhaps, not the best language for this type of thing as it seems quite slow. I have profiled the GPSO algorithm and the bottle neck seems to be the image rendering. This could be eleviated by writing a custom wrapper for the C++ agg library. This would probably take a 2D array as input and parallelize the image rendering by dividing the individuals between threads.
 
