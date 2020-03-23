@@ -48,11 +48,21 @@ The size of the input image will affect the speed of the algorithm. Images of ar
 
 can be accessed from the `Main Menu` and has the ability to resized images. It is a basic API for some of Python pillow's functionality allowing some filtering via PIL.ImageFilter.
 
-A running algorithm will output images into a chosen folder at chosen iteration intervals. The format of the images is SVG. This means they take up little space and are lossless. The `Video Maker`, when pointed at a folder with the aforementioned SVG images, can convert them into a video. `Video Maker` allows the user to select any codcs and containers supported by `cv2`. However, it is up to the user to make sure the codecs are available.
+A running algorithm will output images into a chosen folder at chosen iteration intervals. The format of the images is SVG. This means they take up little space and are lossless. The `Video Maker`, when pointed at a folder with the aforementioned SVG images, can convert them into a video. `Video Maker` allows the user to select any codecs and containers supported by `cv2`. However, it is up to the user to make sure the codecs are available. 
 
 <p align="center">
-<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="300"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="300"/>
 </p>
+
+A freely available codec can be downloaded from https://github.com/cisco/openh264/releases. Just download the correct one for your OS, extract it and place it in the same directory as your python.exe. Version 1.8.0 was required for Python 3.8.
+
+Here are some combinations which worked for me:
+
+| Codec | Container |
+|-------|-----------|
+| avc3  | mp4       |
+| avc1  | mov       |
+| x264  | mkv       |
 
 ### Examples
 
