@@ -118,6 +118,7 @@ The examples below were generated using `GPSO` with a single starting image and 
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/343420.svg" alt="Video Maker" width="200"/>
 </p>
 
+## Upcoming Improvements
 
 Eventually I will add other algorithms such as a conventional genetic algorithm. Python is, perhaps, not the best language for this type of thing as it seems quite slow. I have profiled the GPSO algorithm and the bottle neck seems to be the image rendering. This could be eleviated by writing a custom wrapper for the C++ agg library. This would probably take a 2D array as input and parallelize the image rendering by dividing the individuals between threads.
 
