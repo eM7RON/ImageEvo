@@ -6,13 +6,14 @@ Some software that allows a user to evolve an image by arranging a collection of
 
 ### Prerequisites
 
-python 3  
+python 3 
 numpy  
 scipy  
 scikit-learn  
 pillow  
 aggdraw  
 numexpr  
+pyqt 
 
 ### Installing
 
