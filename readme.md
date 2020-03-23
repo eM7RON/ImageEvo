@@ -28,9 +28,7 @@ then just download the repository and run the main.py file with the previously i
 
 ### Demonstration
 
-<img src="https://raw.githubusercontent.com/eM7RON/Image-Evolution/master/img/chief/461810.svg" alt="3D" width="1000"/>
-
-![ScreenShot](https://raw.githubusercontent.com/eM7RON/Image-Evolution/tree/master/img/main menu.PNG)
+![ScreenShot](https://raw.githubusercontent.com/eM7RON/Image-Evolution/tree/master/img/main_menu.PNG)
 
 ## Authors
 
