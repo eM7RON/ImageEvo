@@ -1,4 +1,4 @@
-# Image Evolution
+# ImageEvo
 
 Some software that allows a user to evolve an image by arranging a collection of randomly generated polygons into a close approximation of a given image. Currently, only one algorithm is implemented (Geometric Particle Swarm Optimization) but others will be added. The project started as some university coursework to come up with a novel application for the GPSO algorithm. Eventually, the algorithm was implemented in a GUI for fun!
 
@@ -40,7 +40,7 @@ If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can
 <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso_setup.PNG" alt="GPSO Setup" width="300"/>
 </p>
 
-The size of the input image will affect the speed of the algorithm. Images of around $256x256$ pixels are perfect. The `Image Editor`:
+The size of the input image will affect the speed of the algorithm. Images of around 256×256 pixels are perfect. The `Image Editor`:
 
 <p align="center">
 <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/image_editor.PNG" alt="Image Editor" width="300"/>
@@ -135,6 +135,6 @@ This project is licensed under the MIT License
 
 * **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [DOI](http://dx.doi.org/doi:10.1155/2008/143624)
 * **Freepik** - *DNA Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6)
-* **Vectors Market** - *Pause Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
+* **Vectors Markets** - *Pause Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
 
 
