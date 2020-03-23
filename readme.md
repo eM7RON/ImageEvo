@@ -26,6 +26,10 @@ python -m ipykernel install --user --name ImageEvo --display-name ImageEvo
 
 then just download the repository and run the main.py file with the previously installed python environment.
 
+### Demonstration
+
+<img src="https://github.com/eM7RON/Image-Evolution/img/chief/110.svg" alt="3D" width="1000"/>
+
 ## Authors
 
 * **eM7RON (Simon Tucker)** - *Initial work* - [github](https://github.com/eM7RON), [linkedin](https://www.linkedin.com/in/simon-tucker-21838372/)
