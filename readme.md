@@ -28,7 +28,7 @@ then just download the repository and run the main.py file with the previously i
 
 ### Demonstration
 
-<img src="https://github.com/eM7RON/Image-Evolution/tree/master/img/chief/461810.svg" alt="3D" width="1000"/>
+<img src="https://github.com/eM7RON/Image-Evolution/tree/master/img/chief/461810.svg" alt="3D" width="256"/>
 
 ## Authors
 
