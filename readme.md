@@ -6,7 +6,7 @@ Some software that allows a user to evolve an image by arranging a collection of
 
 ### Prerequisites
 
-python 3 
+python 3  
 numpy  
 scipy  
 scikit-learn  
@@ -45,7 +45,7 @@ The software launches to a `Main Menu` which allows the user to select between e
 <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/main_menu.PNG" alt="Main Menu" width="300"/>
 </p>
 
-If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can choose from various parameters and run the algorithm. The background colors of the text inputs indicate the validity of the input i.e. red=invalid, yellow=valid (with warning), green=valid.
+If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can choose from various parameters and run the algorithm. The background colors of the text inputs indicate the validity of the input i.e. red=invalid, yellow=valid (with warning), green=valid. The user can choose between different primitive shape types: circles, ellipses, squares, rectangles and polygons. Polygons can have a user defined number of vertices.
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso_setup.PNG" alt="GPSO Setup" width="500"/>
@@ -153,7 +153,7 @@ The examples below were generated using `GPSO` with a single starting image and 
 
 ## Upcoming Improvements
 
-Eventually I will add other algorithms such as a conventional genetic algorithm. Python is, perhaps, not the best language for this type of thing as it seems quite slow. I have profiled the GPSO algorithm and the bottle neck seems to be the image rendering. This could be eleviated by writing a custom wrapper for the C++ agg library. This would probably take a 2D array as input and parallelize the image rendering by dividing the individuals between threads.
+Eventually I will add other algorithms such as a conventional genetic algorithm. Python is, perhaps, not the best language for this type of thing as it seems quite slow. I have profiled the GPSO algorithm and the bottle neck seems to be the image rendering. This could be eleviated by writing a custom wrapper for the C++ agg library. This would probably take a 2D array as input and parallelize the image rendering by dividing the individuals between threads. Another addition to the software would be to be able to use multiple different primitive shape types.
 
 ## Authors
 
