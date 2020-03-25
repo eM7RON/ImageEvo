@@ -20,7 +20,7 @@ def qimage_to_array(img):
     h = img.height()
     ptr = img.bits()
     ptr.setsize(img.byteCount())
-    arr = np.array(ptr).reshape(h, w, 4)[:, :, [2, 1, 0, 3]] # BGRA -> RGBA
+    arr = np.array(ptr).reshape(h, w, 4)#[:, :, [2, 1, 0, 3]] # BGRA -> RGBA
     return arr
 
 def directory_explorer(extension, directory, return_abspath=False):
@@ -136,6 +136,105 @@ def bit_max(v: int) -> int:
 def replace_extension(fname: str, extension: str) -> str:
     fname = fname.split('.')[0]
     return f'{fname}.{extension}'
+
+def index_list(alist: list, idx: list):
+    '''
+    Returns a sublist made by indexing alist with elements from idx
+    '''
+    return [alist[i] for i in idx]
+
+def step_sample(alist: list, strt: int=0, stop: int=-1, step: int=10) -> list:
+    '''
+    Sample the elements in a list at intervals of step
+    '''
+    return index_list(alist, list(range(len(alist)))[strt:stop:step])
+
+def expo_sample(
+                alist   : list, 
+                strt    : int=1, 
+                stop    : int=-1,
+                rate    : float=1.05,
+                decay   : int=False,
+                reverse : int=False,
+                inc_ends: int=True
+                )       -> list:
+    '''
+    Sample the elements in a list with exponential growing or decaying frequency
+    '''
+    idx     = list(range(len(alist)))
+    strt    = max(sidx(idx, strt), 1)
+    stop    = sidx(idx, stop)
+    e_range = expo_range(strt, stop, rate, decay=decay, reverse=reverse, inc_ends=inc_ends, f=lambda x: round(x - 1))
+    return index_list(alist, e_range)
+
+def sidx(alist: list, i: int) -> int:
+    '''
+    Safely index a list
+    '''
+    try:
+        j = alist[i]
+    except IndexError:
+        j = alist[-1]
+    return j
+
+def expo_range(
+               strt    :int, 
+               stop    :int,
+               rate    :float =1.05, 
+               decay   :bool=False, 
+               reverse :bool=False,
+               inc_ends:bool=False,
+               f = lambda x: x,
+               )       -> list:
+    '''
+    Creates a range of exponentially changing numbers. This can
+    be growing or decaying in magnitude.
+    
+    Args:
+        strt     - int, starting value, can be higher than stop
+        stop     - int, ending value, can be lower than start
+        rate     - int, the rate of change of the values in the range
+        decay    - bool=False, whether the output is increasing or decreasing
+        reverse  - bool=False, whether the output should be reversed
+        inc_ends - bool=False, forces the output to contain the strt and 
+                   stop values
+        f        - callable=lambda x: x, a function to adjust the values of
+                   the output
+    Returns:
+        out      - list
+    '''
+    out = []
+    if strt > stop:
+        lo, hi   = stop, strt
+        switched = reverse = True
+    else:
+        lo, hi   = strt, stop
+        switched = False
+    if not decay:
+        prev = temp = hi
+        while lo < hi:
+            out.append(max(0, f(lo)))
+            temp //= rate
+            lo    += prev - temp
+            prev   = temp
+    else:
+        while lo < hi:
+            out.append(max(0, f(lo)))
+            lo *= rate
+    if inc_ends:
+        if switched:
+            if out[-1] != strt:
+                out.append(strt)
+            if out[0]  != stop - 1:
+                out.insert(0, stop)
+        else:
+            if out[0]  != strt - 1:
+                out.insert(0, strt)
+            if out[-1] != stop:
+                out.append(stop)
+    if reverse:
+        out.reverse()
+    return out
 
 class EventLoopThread(QThread):
     '''
