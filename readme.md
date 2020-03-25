@@ -33,7 +33,7 @@ Otherwise on Mac/Linux it's possible to use:
 
 `conda install cv2`
 
-then just download the repository, navigate to the directory with main.py and run main.py with the previously installed python environment:
+Then just download the repository, extract, navigate to the directory with main.py and run main.py with the previously installed python environment:
 
 `python main.py`
 
