@@ -67,7 +67,6 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
         'H265': 'mp4',
         'DIVX': 'avi',
     }
-
     def __init__(self, svg_dir=None, parent=None):
         super(VideoMakerSetup, self).__init__(parent=parent)
         self.setupUi(self)
@@ -78,6 +77,12 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
         # when self.show is called
         self.__show = copy.copy(self.show)
         self.show   = self._show
+
+        self.sampling_method_map = {
+            'start': self.validate_strt_stop_value,
+            'stop': self.validate_strt_stop_value,
+            'step': self.validate_step_value,
+        }
 
         ##############################################################################
         #                      Validated Control Variables                           #
@@ -94,8 +99,27 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
         self.video_codecs = ['h264', 'x264', 'X264', 'h265', 'H264', 'H265', 'DIVX', 'avc1', 'avc3', 'hev1', 'hvc1', 'vc-1', 'drac',
                              'vp09', 'av01', 'ac-3', 'ec-3', 'fLaC', 'tx3g', 'gpmd', 'mp4v', 'Opus', ]
         self.video_codec_dropdown.addItems(self.video_codecs)
-        self.video_codec_dropdown.setCurrentIndex(self.video_codecs.index('H264'))
-        #self.video_codec_dropdown.activated.connect(self.update_save_as)
+        self.video_codec_dropdown.setCurrentText('H264')
+
+        self.sampling_methods = ['None', 
+                                'Linear forward', 
+                                'Linear backward', 
+                                'Exponential growth forward', 
+                                'Exponential growth backward', 
+                                'Exponential decay forward', 
+                                'Exponential decay backward']
+        self.sampling_method_dropdown.addItems(self.sampling_methods)
+        self.sampling_method_dropdown.activated.connect(self.validate_sampling_method_controls)
+        self.sampling_method_dropdown.setCurrentText('None')
+
+        self.sampling_method_controls = [self.start_entry, self.stop_entry, self.step_entry]
+        self.start_entry.textChanged.connect(self.validate_sampling_method_controls)
+        self.start_entry.setText(' ')
+        self.stop_entry.textChanged.connect(self.validate_sampling_method_controls)
+        self.stop_entry.setText(' ')
+        self.step_entry.textChanged.connect(self.validate_sampling_method_controls)
+        self.step_entry.setText(' ')
+
 
         self.containers = ['mp4', 'mov', 'mkv', 'avi', 'divx', 'flv', 'mpg', 'mpeg']
         self.valid_exts = tuple('.' + x for x in self.containers)
@@ -177,9 +201,87 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
                 fname = utils.replace_extension(fname, self.container_dropdown.currentText())
                 self.save_as_line_edit.setText(os.path.join(dir_, fname))
 
+    def validate_sampling_method_controls(self):
+        for control, label in zip(self.sampling_method_controls, ['start', 'stop', 'step']):
+            self.sampling_method_map[label](control)
+        for control, label in zip(self.sampling_method_controls, ['start', 'stop', 'step']):
+            self.sampling_method_map[label](control)
+
     @pyqtSlot()
-    def validate_value(self, sender):
-        text = sender.text()
+    def validate_strt_stop_value(self, control):
+        control_text = control.text()
+        method_text = self.sampling_method_dropdown.currentText()
+        if not control_text.strip() and method_text == 'None':
+            if all(c.valid for c in self.sampling_method_controls):
+                color = VALID_COLOR
+                valid = True
+            else:
+                color = WARNING_COLOR
+                valid = True
+        else:
+            try:
+                num = round(float(control_text))
+            except ValueError:
+                color = INVALID_COLOR
+                valid = False
+            else:
+                u_score = '_' in control_text
+                if method_text != 'None' and not u_score:
+                    if all(c.valid for c in self.sampling_method_controls):
+                        color = VALID_COLOR
+                        valid = True
+                    else:
+                        color = WARNING_COLOR
+                        valid = True
+                elif method_text == 'None' and not u_score:
+                    color = WARNING_COLOR
+                    valid = False
+                else:
+                    color = INVALID_COLOR
+                    valid = False
+        control.setStyleSheet(f"QLineEdit {{ background-color: {color} }}")
+        control.valid = valid
+        ready_check(self)
+
+    @pyqtSlot()
+    def validate_step_value(self, control):
+        control_text = control.text()
+        method_text = self.sampling_method_dropdown.currentText()
+        if not control_text.strip() and method_text == 'None':
+            if all(c.valid for c in self.sampling_method_controls):
+                color = VALID_COLOR
+                valid = True
+            else:
+                color = WARNING_COLOR
+                valid = True
+        else:
+            try:
+                num = float(control_text)
+            except ValueError:
+                color = INVALID_COLOR
+                valid = False
+            else:
+                u_score = '_' in control_text
+                if method_text != 'None' and num > 0 and not u_score:
+                    if all(c.valid for c in self.sampling_method_controls):
+                        color = VALID_COLOR
+                        valid = True
+                    else:
+                        color = WARNING_COLOR
+                        valid = True
+                elif method_text == 'None' and num > 0 and not u_score:
+                    color = WARNING_COLOR
+                    valid = False
+                else:
+                    color = INVALID_COLOR
+                    valid = False
+        control.setStyleSheet(f"QLineEdit {{ background-color: {color} }}")
+        control.valid = valid
+        ready_check(self)
+
+    @pyqtSlot()
+    def validate_value(self, control):
+        text = control.text()
         try:
             num = round(float(text))
         except ValueError:
@@ -194,18 +296,22 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
                 color = INVALID_COLOR
                 valid = False
         finally:
-            sender.setStyleSheet(f"QLineEdit {{ background-color: {color} }}")
-            sender.valid = valid
+            control.setStyleSheet(f"QLineEdit {{ background-color: {color} }}")
+            control.valid = valid
             ready_check(self)
 
     @pyqtSlot()
     def run(self):
         kwargs = dict(
-                      save_name    = self.save_as_line_edit.text(),
-                      input_dir    = self.svg_folder_line_edit.text(),
-                      video_codec  = self.video_codec_dropdown.currentText(),
-                      resolution   = self.resolution_dropdown.currentText(),
-                      fps          = round(float(self.fps_entry.text())),             
+                      save_name       = self.save_as_line_edit.text(),
+                      input_dir       = self.svg_folder_line_edit.text(),
+                      video_codec     = self.video_codec_dropdown.currentText(),
+                      resolution      = self.resolution_dropdown.currentText(),
+                      fps             = round(float(self.fps_entry.text())),
+                      sampling_method = self.sampling_method_dropdown.currentText(),
+                      strt            = round(float(self.start_entry.text())),
+                      stop            = round(float(self.stop_entry.text())),
+                      step            = float(self.step_entry.text()),
                       )
         global prev_, video_maker
         prev_ = self
@@ -240,19 +346,41 @@ class VideoMaker(QWidget, Ui_VideoMaker):
 
         self.show()
 
-        resolution    = kwargs.get('resolution', '1080p')
-        resolution    = self.resolution_map[resolution]
-        fps           = kwargs.get('fps', 30)
-        video_codec   = kwargs.get('video_codec', 'X264')
-        input_dir     = kwargs.get('input_dir', '.\\')
-        save_name     = kwargs['save_name']
+        resolution      = kwargs.get('resolution', '1080p')
+        resolution      = self.resolution_map[resolution]
+        fps             = kwargs.get('fps', 30)
+        video_codec     = kwargs.get('video_codec', 'X264')
+        input_dir       = kwargs.get('input_dir', '.\\')
+        save_name       = kwargs['save_name']
+        sampling_method = kwargs['sampling_method']
+        strt            = kwargs['strt']
+        stop            = kwargs['stop']
+        step            = kwargs['step']
 
         self.progress_bar_label.setText('Status: Scanning for SVG images...')
+        # Load up all the images and sort them in natural sorting order
         fnames = sorted(utils.directory_explorer('svg', input_dir), key=utils.natural_order)
+        # Sub sample fnames
+        if sampling_method != 'None':
+            if sampling_method.startswith('Linear'):
+                fnames = utils.expo_sample(fnames, strt, stop, int(step))
+                if sampling_method.endswith('backward'):
+                    fnames.reverse()
+            else:
+                fnames = utils.expo_sample(
+                                           fnames,
+                                           strt,
+                                           stop, 
+                                           step,
+                                           decay  =sampling_method.split()[1]=='decay',
+                                           reverse=sampling_method.endswith('backward'))
+        # Navigate to input dir
         os.chdir(input_dir)
+        # get the dimensions of the original image
         img_dims = utils.get_svg_dimensions(fnames[0])
-        # Attempt to preserve aspect ratio of original image
+        # Resize to a screen resolution whilst attempting to preserve aspect ratio of original image
         width, height = utils.fit_to_screen(resolution, img_dims)
+
         n        = len(fnames)
         step     = 100. / n
         progress = 0.
@@ -788,8 +916,8 @@ class GpsoSetupWindow(QWidget, Ui_GpsoSetupWindow):
     @pyqtSlot()
     def validateOutputDir(self):
         dir_ = self.output_folder_line_edit.text().strip()
-        if dir_ and os.path.exists(os.path.normpath(dir_)) \
-            or not dir_ and self.output_freq_entry.valid:
+        if dir_ and os.path.exists(os.path.normpath(dir_)):# \
+            #or not dir_ and self.output_freq_entry.valid:
             color = VALID_COLOR
             valid = True
         elif not dir_:
@@ -805,8 +933,8 @@ class GpsoSetupWindow(QWidget, Ui_GpsoSetupWindow):
     @pyqtSlot()
     def validateProgressDir(self):
         dir_ = self.progress_folder_line_edit.text().strip()
-        if dir_ and os.path.exists(os.path.normpath(dir_)) \
-            or not dir_ and self.save_freq_entry.valid:
+        if dir_ and os.path.exists(os.path.normpath(dir_)):# \
+            #or not dir_ and self.save_freq_entry.valid:
             color = VALID_COLOR
             valid = True
         else:
