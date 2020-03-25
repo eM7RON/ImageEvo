@@ -349,7 +349,7 @@ class VideoMaker(QWidget, Ui_VideoMaker):
         resolution      = kwargs.get('resolution', '1080p')
         resolution      = self.resolution_map[resolution]
         fps             = kwargs.get('fps', 30)
-        video_codec     = kwargs.get('video_codec', 'X264')
+        video_codec     = kwargs.get('video_codec', 'avc3')
         input_dir       = kwargs.get('input_dir', '.\\')
         save_name       = kwargs['save_name']
         sampling_method = kwargs['sampling_method']
