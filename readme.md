@@ -23,9 +23,19 @@ The easiest way to create a Python environment to run this code is to install an
 
 `conda activate ImageEvo`
 
-`python -m ipykernel install --user --name ImageEvo --display-name ImageEvo`
+OpenCV is also a requirment. On windows it is best to obtain it from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
 
-then just download the repository and run the main.py file with the previously installed python environment.
+then install it with pip:
+
+`pip install <path/to/whl>`
+
+Otherwise on Mac/Linux it's possible to use:
+
+`conda install cv2`
+
+then just download the repository, navigate to the directory with main.py and run main.py with the previously installed python environment:
+
+`python main.py`
 
 ### Instructions
 
