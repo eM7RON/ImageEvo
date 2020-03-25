@@ -1,6 +1,6 @@
 # ImageEvo
 
-Some software that allows a user to evolve an image by arranging a collection of randomly generated polygons into a close approximation of a given image. Currently, only one algorithm is implemented (Geometric Particle Swarm Optimization) but others will be added. The project started as some university coursework to come up with a novel application for the GPSO algorithm. Eventually, the algorithm was implemented in a GUI for fun!
+Some software that allows a user to arrange a collection of randomly generated shapes into a close approximation of a given image. Currently, only one algorithm is implemented (Geometric Particle Swarm Optimization) but others will be added. The project started as some university coursework to come up with a novel application for the GPSO algorithm. Eventually, the algorithm was implemented in a GUI for fun!
 
 ## Getting Started
 
