@@ -25,7 +25,7 @@ The easiest way to create a Python environment to run this code is to install an
 
 OpenCV is also a requirment. On windows it is best to obtain it from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
 
-then install it with pip:
+then navigate to the download and install it with pip:
 
 `pip install <path/to/whl>`
 
