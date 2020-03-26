@@ -458,13 +458,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>75</width>
+             <width>180</width>
              <height>25</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>75</width>
+             <width>180</width>
              <height>25</height>
             </size>
            </property>
@@ -487,13 +487,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>100</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>97</width>
+             <width>100</width>
              <height>16777215</height>
             </size>
            </property>
@@ -528,13 +528,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>75</width>
+             <width>180</width>
              <height>25</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>75</width>
+             <width>180</width>
              <height>25</height>
             </size>
            </property>
@@ -571,7 +571,7 @@
             <string>How much to weight the global best position during crossover</string>
            </property>
            <property name="text">
-            <string>Filter size argument</string>
+            <string>Filter size arg.</string>
            </property>
           </widget>
          </item>
@@ -601,13 +601,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>65</width>
+             <width>75</width>
              <height>25</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>65</width>
+             <width>75</width>
              <height>25</height>
             </size>
            </property>
