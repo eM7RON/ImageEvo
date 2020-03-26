@@ -84,7 +84,7 @@ Most video formats will handle approximately 60 fps maximum, and if you have gen
 The video rendering progress is displayed as below:
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="400"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="410"/>
 </p>
 
 ### Examples
@@ -168,4 +168,3 @@ This project is licensed under the MIT License
 * **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [DOI](http://dx.doi.org/doi:10.1155/2008/143624)
 * **Freepik** - *DNA Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6)
 * **Vectors Markets** - *Pause Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
-
