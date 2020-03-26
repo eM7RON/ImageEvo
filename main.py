@@ -99,7 +99,7 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
         self.video_codecs = ['h264', 'x264', 'X264', 'h265', 'H264', 'H265', 'DIVX', 'avc1', 'avc3', 'hev1', 'hvc1', 'vc-1', 'drac',
                              'vp09', 'av01', 'ac-3', 'ec-3', 'fLaC', 'tx3g', 'gpmd', 'mp4v', 'Opus', ]
         self.video_codec_dropdown.addItems(self.video_codecs)
-        self.video_codec_dropdown.setCurrentText('H264')
+        self.video_codec_dropdown.setCurrentText('avc3')
 
         self.sampling_methods = ['None', 
                                 'Linear forward', 
@@ -302,16 +302,27 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
 
     @pyqtSlot()
     def run(self):
+
+        sampling_method = self.sampling_method_dropdown.currentText()
+        if sampling_method == 'None':
+            strt = None
+            stop = None
+            step = None
+        else:
+            strt = round(float(self.start_entry.text()))
+            stop = round(float(self.stop_entry.text()))
+            step = float(self.step_entry.text())
+
         kwargs = dict(
                       save_name       = self.save_as_line_edit.text(),
                       input_dir       = self.svg_folder_line_edit.text(),
                       video_codec     = self.video_codec_dropdown.currentText(),
                       resolution      = self.resolution_dropdown.currentText(),
                       fps             = round(float(self.fps_entry.text())),
-                      sampling_method = self.sampling_method_dropdown.currentText(),
-                      strt            = round(float(self.start_entry.text())),
-                      stop            = round(float(self.stop_entry.text())),
-                      step            = float(self.step_entry.text()),
+                      sampling_method = sampling_method,
+                      strt            = strt,
+                      stop            = stop,
+                      step            = step,
                       )
         global prev_, video_maker
         prev_ = self
