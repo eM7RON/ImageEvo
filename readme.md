@@ -76,7 +76,7 @@ Here are some combinations which worked for me:
 | x264  | mkv       |
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker_setup.PNG" alt="Video Maker Setup" width="400"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker_setup.PNG" alt="Video Maker Setup" width="380"/>
 </p>
 
 Most video formats will handle approximately 60 fps maximum, and if you have generated millions of images, this may mean your video will be too long. Furthermore, because most of the improvement of the algorithm occurs near the start, towards the end there may be thousands of images which are the same, and little changes, which can lead to a boring video. To alleviate this, `Video Maker` includes some sampling methods which can allow the user to create a video from a subset of the images in the supplied folder. For example, the user may want to use `Exponential decay forward` which will sample early images much more frequent than later images, where less canged occurs. This creates a video where improvement is more constant and more interesting to watch. It is also possible to create a 'reversed' video where fitness decreases over time and the 'best' image achieved may decay into a collection of random images.
@@ -84,7 +84,7 @@ Most video formats will handle approximately 60 fps maximum, and if you have gen
 The video rendering progress is displayed as below:
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="400"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="380"/>
 </p>
 
 ### Examples
