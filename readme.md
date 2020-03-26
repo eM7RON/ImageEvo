@@ -84,7 +84,7 @@ Most video formats will handle approximately 60 fps maximum, and if you have gen
 The video rendering progress is displayed as below:
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="410"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="400"/>
 </p>
 
 ### Examples
