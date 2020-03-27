@@ -92,8 +92,8 @@ The video rendering progress is displayed as below:
 The examples below were generated using `GPSO` with a single starting image and an increasing number of images. This was found to generate the best images with GPSO.
 
 <p align="center">
-     <b> Master Chief <b/>
-<p/>
+     <b> Master Chief </b>
+</p>
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/110.svg" alt="Video Maker" width="200"/>
@@ -107,8 +107,8 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-     <b> Jimi Hendrix <b/>
-<p/>
+     <b> Jimi Hendrix </b>
+</p>
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/1930.svg" alt="Video Maker" width="200"/>
@@ -122,8 +122,8 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-     <b> Skull <b/>
-<p/>
+     <b> Skull </b>
+</p>
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/150.svg" alt="Video Maker" width="200"/>
@@ -137,8 +137,8 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-     <b> Walter White <b/>
-<p/>
+     <b> Walter White </b>
+</p>
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/130.svg" width="200"/>
