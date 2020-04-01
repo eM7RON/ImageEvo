@@ -58,13 +58,13 @@ If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can
 When the an algorithm is run, the progress will be displayed in a separate window as below. The current 'best' solution will be displayed in a window on the left (`progress image`). The image format is SVG and the image will be fit to the window whilst preserving the original aspect ratio. However, the `progress image` may appear larger than the orignal image. A `matplotlib` figure is display in a widget to the lower left. This shows the progress over time. Depending on the selected algorithm, this figure can display different series e.g. standard deviation or mean, which are easy to toggle on and off. Some stats will be displayed above this figure such as fitness and iterations etc... At the bottom right there are controls to `pause` the algorithm and `save` progress. These controls may seem 'sluggish' but bare in mind that the controls are toggling a flag and the selected action is performed at a specific location in the main loop.
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso.PNG" alt="GPSO" width="1000"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso.svg" alt="GPSO" width="1150"/>
 </p>
 
 The size of the input image will affect the speed of the algorithm. Images of around 256×256 pixels are perfect. The `Image Editor`:
 
 <p align="center">
-<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/image_editor.PNG" alt="Image Editor" width="300"/>
+<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/image_editor.svg" alt="Image Editor" width="300"/>
 </p>
 
 can be accessed from the `Main Menu` and has the ability to resized images. It is a basic API for some of Python pillow's functionality allowing some filtering via PIL.ImageFilter.
@@ -80,7 +80,7 @@ Here are some combinations which worked for me:
 | x264  | mkv       |
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker_setup.PNG" alt="Video Maker Setup" width="380"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker_setup.svg" alt="Video Maker Setup" width="300"/>
 </p>
 
 Most video formats will handle approximately 60 fps maximum, and if you have generated millions of images, this may mean your video will be too long. Furthermore, because most of the improvement of the algorithm occurs near the start, towards the end there may be thousands of images which are the same, and little changes, which can lead to a boring video. To alleviate this, `Video Maker` includes some sampling methods which can allow the user to create a video from a subset of the images in the supplied folder. For example, the user may want to use `Exponential decay forward` which will sample early images much more frequent than later images, where less canged occurs. This creates a video where improvement is more constant and more interesting to watch. It is also possible to create a 'reversed' video where fitness decreases over time and the 'best' image achieved may decay into a collection of random images.
@@ -88,7 +88,7 @@ Most video formats will handle approximately 60 fps maximum, and if you have gen
 The video rendering progress is displayed as below:
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="380"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.svg" alt="Video Maker" width="380"/>
 </p>
 
 ### Examples
