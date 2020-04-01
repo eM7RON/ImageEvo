@@ -31,11 +31,15 @@ then navigate to the download and install it with pip:
 
 Otherwise on Mac/Linux it's possible to use:
 
-`conda install cv2`
+`pip install opencv-python`
 
 Then just download the repository, extract, navigate to the directory with main.py and run main.py with the previously installed python environment:
 
 `python main.py`
+
+Although `ImageEvo` does offer some video rendering abilities, users are responsible for supplying video codecs. A popular H264 codec is available here: https://github.com/cisco/openh264/releases
+
+Another option is to build `opencv`, linked with `ffmpeg`, from source using `cmake`.
 
 ### Instructions
 
@@ -48,7 +52,7 @@ The software launches to a `Main Menu` which allows the user to select between e
 If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can choose from various parameters and run the algorithm. The background colors of the text inputs indicate the validity of the input i.e. red=invalid, yellow=valid (with warning), green=valid. The user can choose between different primitive shape types: circles, ellipses, squares, rectangles and polygons. Polygons can have a user defined number of vertices.
 
 <p align="center">
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso_setup.PNG" alt="GPSO Setup" width="500"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/gpso_setup.svg" alt="GPSO Setup" width="1100"/>
 </p>
 
 When the an algorithm is run, the progress will be displayed in a separate window as below. The current 'best' solution will be displayed in a window on the left (`progress image`). The image format is SVG and the image will be fit to the window whilst preserving the original aspect ratio. However, the `progress image` may appear larger than the orignal image. A `matplotlib` figure is display in a widget to the lower left. This shows the progress over time. Depending on the selected algorithm, this figure can display different series e.g. standard deviation or mean, which are easy to toggle on and off. Some stats will be displayed above this figure such as fitness and iterations etc... At the bottom right there are controls to `pause` the algorithm and `save` progress. These controls may seem 'sluggish' but bare in mind that the controls are toggling a flag and the selected action is performed at a specific location in the main loop.
