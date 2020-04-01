@@ -91,7 +91,7 @@ The video rendering progress is displayed as below:
      <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/video_maker.PNG" alt="Video Maker" width="380"/>
 </p>
 
-### Examples
+### Examples 
 
 The examples below were generated using `GPSO` with a single starting image and an increasing number of images. This was found to generate the best images with GPSO.
 
