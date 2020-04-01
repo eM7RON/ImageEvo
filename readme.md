@@ -19,7 +19,7 @@ pyqt
 
 The easiest way to create a Python environment to run this code is to install anaconda and in anaconda prompt use the commands:
 
-`conda create -n ImageEvo -c defaults -c conda-forge ipykernel numpy scipy scikit-learn numexpr matplotlib pillow aggdraw`
+`conda create -n ImageEvo -c defaults -c conda-forge numpy scipy scikit-learn numexpr matplotlib pillow aggdraw`
 
 `conda activate ImageEvo`
 
@@ -42,7 +42,7 @@ Then just download the repository, extract, navigate to the directory with main.
 The software launches to a `Main Menu` which allows the user to select between evolving a new image (by choosing an algorithm e.g. `GPSO`), loading up a previously initialized population (`Load`), editing and image (`Image Editor`) or creating a video (`Video Maker`).
 
 <p align="center">
-<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/main_menu.PNG" alt="Main Menu" width="300"/>
+<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/main_menu.svg" alt="Main Menu" width="700"/>
 </p>
 
 If an algorithm is selected e.g. `GPSO`, a setup screen opens where the user can choose from various parameters and run the algorithm. The background colors of the text inputs indicate the validity of the input i.e. red=invalid, yellow=valid (with warning), green=valid. The user can choose between different primitive shape types: circles, ellipses, squares, rectangles and polygons. Polygons can have a user defined number of vertices.
