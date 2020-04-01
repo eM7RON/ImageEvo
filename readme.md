@@ -107,7 +107,7 @@ The examples below were generated using `GPSO` with a single starting image and 
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/26860.svg" alt="Video Maker" width="200"/>
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/78760.svg" alt="Video Maker" width="200"/>
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/268010.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/461810.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/722850.svg" alt="Video Maker" width="200"/>
 </p>
 
 <p align="center">
