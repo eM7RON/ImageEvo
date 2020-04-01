@@ -94,7 +94,7 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
             v.valid = False
 
         self.validated_controls = [self.run_button]
-        self.close_prompt = ConfirmationPrompt(end_program, window_title='𝕍ideo𝕄aker', message='Quit')
+        self.close_prompt = ConfirmationPrompt(end_program, self, window_title='𝕍ideo𝕄aker', message='Quit')
 
         self.video_codecs = ['h264', 'x264', 'X264', 'h265', 'H264', 'H265', 'DIVX', 'avc1', 'avc3', 'hev1', 'hvc1', 'vc-1', 'drac',
                              'vp09', 'av01', 'ac-3', 'ec-3', 'fLaC', 'tx3g', 'gpmd', 'mp4v', 'Opus', ]
@@ -324,10 +324,8 @@ class VideoMakerSetup(QWidget, Ui_VideoMakerSetup):
                       stop            = stop,
                       step            = step,
                       )
-        global prev_, video_maker
-        prev_ = self
-        self.close()
-        video_maker = VideoMaker(**kwargs)
+
+        navigate(self, VideoMaker(**kwargs))
 
 
 class VideoMaker(QWidget, Ui_VideoMaker):
@@ -349,48 +347,52 @@ class VideoMaker(QWidget, Ui_VideoMaker):
         self.setupUi(self)
         self.setWindowIcon(ICON)
 
-        self.close_prompt = ConfirmationPrompt(end_program, window_title='𝕍ideo𝕄aker', message='Quit')
+        self.__show = copy.copy(self.show)
+        self.show   = self._show
+
+        self.close_prompt = ConfirmationPrompt(end_program, self, window_title='𝕍ideo𝕄aker', message='Quit')
         self.back_button.setEnabled(False)
         self.exit_button.setEnabled(False)
         self.back_button.clicked.connect(lambda: navigate(self, prev_))
         self.exit_button.clicked.connect(self.close_prompt.show)
 
-        self.show()
+        self.resolution      = kwargs.get('resolution', '1080p')
+        self.resolution      = self.resolution_map[self.resolution]
+        self.fps             = kwargs.get('fps', 30)
+        self.video_codec     = kwargs.get('video_codec', 'avc3')
+        self.input_dir       = kwargs.get('input_dir', '.\\')
+        self.save_name       = kwargs['save_name']
+        self.sampling_method = kwargs['sampling_method']
+        self.strt            = kwargs['strt']
+        self.stop            = kwargs['stop']
+        self.step            = kwargs['step']
 
-        resolution      = kwargs.get('resolution', '1080p')
-        resolution      = self.resolution_map[resolution]
-        fps             = kwargs.get('fps', 30)
-        video_codec     = kwargs.get('video_codec', 'avc3')
-        input_dir       = kwargs.get('input_dir', '.\\')
-        save_name       = kwargs['save_name']
-        sampling_method = kwargs['sampling_method']
-        strt            = kwargs['strt']
-        stop            = kwargs['stop']
-        step            = kwargs['step']
+    def _show(self):
 
+        self.__show()
         self.progress_bar_label.setText('Status: Scanning for SVG images...')
         # Load up all the images and sort them in natural sorting order
-        fnames = sorted(utils.directory_explorer('svg', input_dir), key=utils.natural_order)
+        fnames = sorted(utils.directory_explorer('svg', self.input_dir), key=utils.natural_order)
         # Sub sample fnames
-        if sampling_method != 'None':
-            if sampling_method.startswith('Linear'):
-                fnames = utils.expo_sample(fnames, strt, stop, int(step))
-                if sampling_method.endswith('backward'):
+        if self.sampling_method != 'None':
+            if self.sampling_method.startswith('Linear'):
+                fnames = utils.expo_sample(fnames, self.strt, self.stop, round(self.step))
+                if self.sampling_method.endswith('backward'):
                     fnames.reverse()
             else:
                 fnames = utils.expo_sample(
                                            fnames,
-                                           strt,
-                                           stop, 
-                                           step,
-                                           decay  =sampling_method.split()[1]=='decay',
-                                           reverse=sampling_method.endswith('backward'))
+                                           self.strt,
+                                           self.stop, 
+                                           self.step,
+                                           decay  =self.sampling_method.split()[1]=='decay',
+                                           reverse=self.sampling_method.endswith('backward'))
         # Navigate to input dir
-        os.chdir(input_dir)
+        os.chdir(self.input_dir)
         # get the dimensions of the original image
         img_dims = utils.get_svg_dimensions(fnames[0])
         # Resize to a screen resolution whilst attempting to preserve aspect ratio of original image
-        width, height = utils.fit_to_screen(resolution, img_dims)
+        width, height = utils.fit_to_screen(self.resolution, img_dims)
 
         n        = len(fnames)
         step     = 100. / n
@@ -405,7 +407,7 @@ class VideoMaker(QWidget, Ui_VideoMaker):
         # X264, .mkv, 60fps, 1080p
         # avc1, .mov  
         # https://github.com/cisco/openh264/releases                      'X264', 'DIVX'
-        video_writer = cv2.VideoWriter(save_name, cv2.VideoWriter_fourcc(*video_codec), fps, (width, height))
+        video_writer = cv2.VideoWriter(self.save_name, cv2.VideoWriter_fourcc(*self.video_codec), self.fps, (width, height))
 
         self.progress_bar_label.setText('Status: Rendering video...')
 
@@ -457,7 +459,14 @@ class MainMenu(QWidget, Ui_MainMenu):
         self.setupUi(self)
         self.setWindowIcon(ICON)
 
-        self.close_prompt = ConfirmationPrompt(end_program, message='Quit')
+        # Centre the application on the current display
+        screen_geometry = QDesktopWidget().screenGeometry()
+        w, h = self.geometry().width(), self.geometry().height()
+        x = round(screen_geometry.width() / 2 - w / 2)
+        y = round(screen_geometry.height() / 2 - h / 2)
+        self.setGeometry(x, y, w, h)
+        # Initialize the 'exit dialog'
+        self.close_prompt = ConfirmationPrompt(end_program, self, message='Quit')
 
         self.load_button.clicked.connect(lambda: navigate(self, load_window))
         self.gpso_button.clicked.connect(lambda: navigate(self, gpso_setup_window))
@@ -623,11 +632,13 @@ class ImageEditor(QWidget, Ui_ImageEditor):
         self.apply_button.clicked.connect(self.apply_changes)
 
     def load_img(self):
-        try:
-            self.img = Image.open(os.path.normpath(self.input_file_line_edit.text())).convert('RGBA')
-            self.display_img()
-        except (FileNotFoundError, AttributeError, PermissionError):
-            pass
+        path = os.path.normpath(self.input_file_line_edit.text())
+        if path.endswith(IMG_FORMATS):
+            try:
+                self.img = Image.open(path).convert('RGBA')
+                self.display_img()
+            except (FileNotFoundError, AttributeError, PermissionError):
+                pass
 
     def resize_img(self):
         target = int(self.size_dropdown.currentText())
@@ -1092,7 +1103,7 @@ class GpsoSetupWindow(QWidget, Ui_GpsoSetupWindow):
         global gpso_display_window
         gpso_display_window = GpsoDisplayWindow()
         gpso_display_window.init(**kwargs)
-        self.close()
+        navigate(self, gpso_display_window)
 
 
 class ConfirmationPrompt(QWidget, Ui_ConfirmationPrompt):
@@ -1103,17 +1114,25 @@ class ConfirmationPrompt(QWidget, Ui_ConfirmationPrompt):
     '''
     id_ = 'confirmation_prompt'
 
-    def __init__(self, yes_action, no_action=None, window_title=None, message=None, parent=None):
+    def __init__(self, yes_action, owner, no_action=None, window_title=None, message=None, parent=None):
         super(ConfirmationPrompt, self).__init__(parent=parent)
         self.setupUi(self)
         self.setWindowIcon(ICON)
         if window_title is not None:
             self.setWindowTitle(window_title)
 
+        self.__show = copy.copy(self.show)
+        self.show   = self._show
+
+        self.owner = owner
         self.message.setText(message if message is not None else '')
 
         self.yes_button.clicked.connect(yes_action)
         self.no_button.clicked.connect(no_action if no_action is not None else self.close)
+
+    def _show(self):
+        position_next_window(self.owner, self)
+        self.__show()
 
 
 class GpsoDisplayWindow(QWidget, Ui_GpsoDisplayWindow):
@@ -1128,8 +1147,8 @@ class GpsoDisplayWindow(QWidget, Ui_GpsoDisplayWindow):
         super(GpsoDisplayWindow, self).__init__(parent=parent)
         self.setupUi(self)
         self.setWindowIcon(ICON)
-        shape = QDesktopWidget().screenGeometry()
-        self.setGeometry(shape.width() // 2, shape.height() // 2, 400, 400)
+        #shape = QDesktopWidget().screenGeometry()
+        #self.setGeometry(shape.width() // 2, shape.height() // 2, 400, 400)
 
         self.button_map = {
                           'Save state': self.save_pressed,
@@ -1170,7 +1189,7 @@ class GpsoDisplayWindow(QWidget, Ui_GpsoDisplayWindow):
         self.avg_checkbox.toggled.connect(lambda: self.MplDisplay.toggleVisible('avg'))
         self.std_checkbox.toggled.connect(lambda: self.MplDisplay.toggleVisible('std'))
 
-        self.close_prompt = ConfirmationPrompt(lambda: navigate_to_video_maker_prompt(self), message='Quit')
+        self.close_prompt = ConfirmationPrompt(lambda: navigate_to_video_maker_prompt(self), self, message='Quit')
 
         self.pause_button.clicked.connect(lambda: self.execute_action_button(self.pause_button))
         self.save_button.clicked.connect(lambda: self.execute_action_button(self.save_button))
@@ -1233,25 +1252,25 @@ def disconnect(control):
     except TypeError:
         pass
 
-def navigate(self, next_):
+def navigate(live_, next_):
     '''
     navigate between two windows
     '''
     global prev_
-    prev_ = self
+    prev_ = live_
     position_next_window(prev_, next_)
-    self.close()
+    live_.close()
     next_.show()
 
-def position_next_window(prev_, next_):
+def position_next_window(live_, next_):
     '''
-    Sets the position of the next_ window to the position of prev_ window
+    Sets the position of the next_ window to the position of live_ window
     whilst preserving the geometry of the next_ window
     '''
     w = next_.geometry().width()
     h = next_.geometry().height()
-    x = round(prev_.geometry().x() + prev_.geometry().width() / 2 - w / 2)
-    y = round(prev_.geometry().y() + prev_.geometry().height() / 2 - h / 2)
+    x = round(live_.geometry().x() + live_.geometry().width() / 2 - w / 2)
+    y = round(live_.geometry().y() + live_.geometry().height() / 2 - h / 2)
     next_.setGeometry(x, y, w, h)
 
 def end_program():
