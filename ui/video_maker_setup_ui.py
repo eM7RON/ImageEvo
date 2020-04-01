@@ -18,7 +18,7 @@ class Ui_VideoMakerSetup(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(VideoMakerSetup.sizePolicy().hasHeightForWidth())
         VideoMakerSetup.setSizePolicy(sizePolicy)
-        VideoMakerSetup.setMinimumSize(QtCore.QSize(357, 100))
+        VideoMakerSetup.setMinimumSize(QtCore.QSize(357, 520))
         VideoMakerSetup.setMaximumSize(QtCore.QSize(357, 520))
         self._2 = QtWidgets.QVBoxLayout(VideoMakerSetup)
         self._2.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
