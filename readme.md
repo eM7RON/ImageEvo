@@ -170,5 +170,7 @@ This project is licensed under the MIT License
 ## Acknowledgments
 
 * **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [DOI](http://dx.doi.org/doi:10.1155/2008/143624)
-* **Freepik** - *DNA Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6)
-* **Vectors Markets** - *Pause Icon* - [www.flaticon.com](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
+* **Freepik** - [*DNA Icon*](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6), [*Paint Image*](https://www.flaticon.com/free-icon/paint_1157969?term=paint%20palette&page=1&position=6) 
+* **Vectors Markets** - [*Pause Icon*](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
+* **DinosoftLabs** - [*TV Icon*](https://www.https://www.flaticon.com/free-icon/tv_716429)
+* **Becris** - [*Alg Image*](https://www.flaticon.com/free-icon/neural_2103633?term=algorithm&page=1&position=6)
