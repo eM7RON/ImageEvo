@@ -64,7 +64,7 @@ When the an algorithm is run, the progress will be displayed in a separate windo
 The size of the input image will affect the speed of the algorithm. Images of around 256×256 pixels are perfect. The `Image Editor`:
 
 <p align="center">
-<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/tour/image_editor.svg" alt="Image Editor" width="400"/>
+<img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/tour/image_editor.svg" alt="Image Editor" width="900"/>
 </p>
 
 can be accessed from the `Main Menu` and has the ability to resized images. It is a basic API for some of Python pillow's functionality allowing some filtering via PIL.ImageFilter.
@@ -80,7 +80,7 @@ Here are some combinations which worked for me:
 | x264  | mkv       |
 
 <p align="center">
-     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/tour/video_maker_setup.svg" alt="Video Maker Setup" width="400"/>
+     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/tour/video_maker_setup.svg" alt="Video Maker Setup" width="900"/>
 </p>
 
 Most video formats will handle approximately 60 fps maximum, and if you have generated millions of images, this may mean your video will be too long. Furthermore, because most of the improvement of the algorithm occurs near the start, towards the end there may be thousands of images which are the same, and little changes, which can lead to a boring video. To alleviate this, `Video Maker` includes some sampling methods which can allow the user to create a video from a subset of the images in the supplied folder. For example, the user may want to use `Exponential decay forward` which will sample early images much more frequent than later images, where less canged occurs. This creates a video where improvement is more constant and more interesting to watch. It is also possible to create a 'reversed' video where fitness decreases over time and the 'best' image achieved may decay into a collection of random images.
@@ -101,13 +101,13 @@ The examples below were generated using `GPSO` with a single starting image and 
 
 <p align="center">
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/110.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/810.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/3560.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/9460.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/26860.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/78760.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/268010.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/722850.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/810.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/3560.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/9460.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/26860.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/78760.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/268010.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/722850.svg" alt="Video Maker" width="200"/>
 </p>
 
 <p align="center">
@@ -115,14 +115,14 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/1930.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/7980.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/12920.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/24440.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/45350.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/100270.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/186510.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/hendrix/280630.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/1930.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/7980.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/12920.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/24440.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/45350.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/100270.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/186510.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/hendrix/280630.svg" alt="Video Maker" width="200"/>
 </p>
 
 <p align="center">
@@ -130,14 +130,14 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/150.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/5510.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/13150.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/28700.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/67550.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/143350.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/255600.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/skull/286070.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/150.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/5510.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/13150.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/28700.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/67550.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/143350.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/255600.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/skull/286070.svg" alt="Video Maker" width="200"/>
 </p>
 
 <p align="center">
@@ -145,14 +145,14 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/130.svg" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/1550.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/11650.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/25110.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/57380.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/121040.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/215190.svg" alt="Video Maker" width="200"/>
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/walter/343420.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/130.svg" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/1550.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/11650.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/25110.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/57380.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/121040.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/215190.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/walter/343420.svg" alt="Video Maker" width="200"/>
 </p>
 
 ## Upcoming Improvements
