@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'video_maker_ui.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_VideoMaker(object):
     def setupUi(self, VideoMaker):
@@ -29,6 +31,7 @@ class Ui_VideoMaker(object):
         self.line_3.setObjectName("line_3")
         self.horizontalLayout.addWidget(self.line_3)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setSpacing(17)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.line_2 = QtWidgets.QFrame(VideoMaker)
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
@@ -127,4 +130,3 @@ class Ui_VideoMaker(object):
         self.total_label.setText(_translate("VideoMaker", "Total:"))
         self.back_button.setText(_translate("VideoMaker", "Back"))
         self.exit_button.setText(_translate("VideoMaker", "Exit"))
-

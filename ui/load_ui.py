@@ -2,23 +2,25 @@
 
 # Form implementation generated from reading ui file 'load_ui.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_LoadWindow(object):
     def setupUi(self, LoadWindow):
         LoadWindow.setObjectName("LoadWindow")
-        LoadWindow.resize(357, 210)
+        LoadWindow.resize(357, 245)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(LoadWindow.sizePolicy().hasHeightForWidth())
         LoadWindow.setSizePolicy(sizePolicy)
-        LoadWindow.setMinimumSize(QtCore.QSize(357, 210))
-        LoadWindow.setMaximumSize(QtCore.QSize(357, 210))
+        LoadWindow.setMinimumSize(QtCore.QSize(357, 245))
+        LoadWindow.setMaximumSize(QtCore.QSize(357, 245))
         self.verticalLayout = QtWidgets.QVBoxLayout(LoadWindow)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -35,6 +37,19 @@ class Ui_LoadWindow(object):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.verticalLayout_2.addWidget(self.line_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label = QtWidgets.QLabel(LoadWindow)
+        self.label.setMinimumSize(QtCore.QSize(100, 27))
+        self.label.setMaximumSize(QtCore.QSize(100, 27))
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.horizontalLayout_2.addWidget(self.label)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout_2.addItem(spacerItem1)
         self.horizontalLayout_31 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_31.setObjectName("horizontalLayout_31")
         self.input_folder_label_2 = QtWidgets.QLabel(LoadWindow)
@@ -45,8 +60,8 @@ class Ui_LoadWindow(object):
         self.input_folder_label_2.setSizePolicy(sizePolicy)
         self.input_folder_label_2.setObjectName("input_folder_label_2")
         self.horizontalLayout_31.addWidget(self.input_folder_label_2)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_31.addItem(spacerItem)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_31.addItem(spacerItem2)
         self.verticalLayout_2.addLayout(self.horizontalLayout_31)
         self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_30.setObjectName("horizontalLayout_30")
@@ -80,8 +95,8 @@ class Ui_LoadWindow(object):
         self.output_folder_label_3.setSizePolicy(sizePolicy)
         self.output_folder_label_3.setObjectName("output_folder_label_3")
         self.horizontalLayout_60.addWidget(self.output_folder_label_3)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_60.addItem(spacerItem1)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_60.addItem(spacerItem3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_60)
         self.horizontalLayout_59 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_59.setObjectName("horizontalLayout_59")
@@ -103,8 +118,8 @@ class Ui_LoadWindow(object):
         self.output_folder_browser.setObjectName("output_folder_browser")
         self.horizontalLayout_59.addWidget(self.output_folder_browser)
         self.verticalLayout_2.addLayout(self.horizontalLayout_59)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem2)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem4)
         self.line_5 = QtWidgets.QFrame(LoadWindow)
         self.line_5.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
@@ -152,6 +167,7 @@ class Ui_LoadWindow(object):
     def retranslateUi(self, LoadWindow):
         _translate = QtCore.QCoreApplication.translate
         LoadWindow.setWindowTitle(_translate("LoadWindow", "𝕀mage𝔼vo"))
+        self.label.setText(_translate("LoadWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Load previous:</span></p></body></html>"))
         self.input_folder_label_2.setToolTip(_translate("LoadWindow", "The input file path (supported types: jpg, jpeg, jpe, jfif, png)"))
         self.input_folder_label_2.setText(_translate("LoadWindow", "Progress file:"))
         self.progress_file_line_edit.setToolTip(_translate("LoadWindow", "The input file path (supported types: jpg, jpeg, jpe, jfif, png)"))
@@ -166,4 +182,3 @@ class Ui_LoadWindow(object):
         self.run_button.setText(_translate("LoadWindow", "Run"))
         self.back_button.setToolTip(_translate("LoadWindow", "Execute the algorithm"))
         self.back_button.setText(_translate("LoadWindow", "Back"))
-

@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'gpso_setup_ui.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_GpsoSetupWindow(object):
     def setupUi(self, GpsoSetupWindow):
@@ -31,6 +33,7 @@ class Ui_GpsoSetupWindow(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setSpacing(6)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.line_3 = QtWidgets.QFrame(GpsoSetupWindow)
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
@@ -40,15 +43,12 @@ class Ui_GpsoSetupWindow(object):
         self.horizontalLayout_27 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_27.setObjectName("horizontalLayout_27")
         self.gpso_setup_label = QtWidgets.QLabel(GpsoSetupWindow)
+        self.gpso_setup_label.setMinimumSize(QtCore.QSize(0, 27))
+        self.gpso_setup_label.setMaximumSize(QtCore.QSize(16777215, 27))
         self.gpso_setup_label.setAlignment(QtCore.Qt.AlignCenter)
         self.gpso_setup_label.setObjectName("gpso_setup_label")
         self.horizontalLayout_27.addWidget(self.gpso_setup_label)
         self.verticalLayout_8.addLayout(self.horizontalLayout_27)
-        self.line_11 = QtWidgets.QFrame(GpsoSetupWindow)
-        self.line_11.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_11.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_11.setObjectName("line_11")
-        self.verticalLayout_8.addWidget(self.line_11)
         self.horizontalLayout_29 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_29.setObjectName("horizontalLayout_29")
         self.input_folder_label = QtWidgets.QLabel(GpsoSetupWindow)
@@ -424,6 +424,7 @@ class Ui_GpsoSetupWindow(object):
         self.horizontalLayout_4.addItem(spacerItem16)
         self.verticalLayout_11 = QtWidgets.QVBoxLayout()
         self.verticalLayout_11.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.verticalLayout_11.setSpacing(8)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.line_10 = QtWidgets.QFrame(GpsoSetupWindow)
         self.line_10.setFrameShape(QtWidgets.QFrame.HLine)
@@ -901,7 +902,7 @@ class Ui_GpsoSetupWindow(object):
     def retranslateUi(self, GpsoSetupWindow):
         _translate = QtCore.QCoreApplication.translate
         GpsoSetupWindow.setWindowTitle(_translate("GpsoSetupWindow", "𝕀mage𝔼vo"))
-        self.gpso_setup_label.setText(_translate("GpsoSetupWindow", "GPSO Setup"))
+        self.gpso_setup_label.setText(_translate("GpsoSetupWindow", "<html><head/><body><p><span style=\" font-weight:600;\">GPSO Setup</span></p></body></html>"))
         self.input_folder_label.setToolTip(_translate("GpsoSetupWindow", "The input file path (supported types: jpg, jpeg, jpe, jfif, png)"))
         self.input_folder_label.setText(_translate("GpsoSetupWindow", "Image file:"))
         self.input_file_line_edit.setToolTip(_translate("GpsoSetupWindow", "The input file path (supported types: jpg, jpeg, jpe, jfif, png)"))
@@ -992,4 +993,3 @@ class Ui_GpsoSetupWindow(object):
         self.run_button.setText(_translate("GpsoSetupWindow", "Run"))
         self.back_button.setToolTip(_translate("GpsoSetupWindow", "Execute the algorithm"))
         self.back_button.setText(_translate("GpsoSetupWindow", "Back"))
-
