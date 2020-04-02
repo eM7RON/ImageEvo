@@ -100,7 +100,7 @@ The examples below were generated using `GPSO` with a single starting image and 
 </p>
 
 <p align="center">
-    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/chief/110.svg" alt="Video Maker" width="200"/>
+    <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/110.svg" alt="Video Maker" width="200"/>
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/810.svg" alt="Video Maker" width="200"/>
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/3560.svg" alt="Video Maker" width="200"/>
     <img src="https://github.com/eM7RON/Image-Evolution/blob/master/img/demo/chief/9460.svg" alt="Video Maker" width="200"/>
@@ -169,7 +169,7 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-* **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [DOI](http://dx.doi.org/doi:10.1155/2008/143624)
+* **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [http://dx.doi.org/doi:10.1155/2008/143624](http://dx.doi.org/doi:10.1155/2008/143624)
 * **Freepik** - [*DNA Icon*](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6), [*Paint Image*](https://www.flaticon.com/free-icon/paint_1157969?term=paint%20palette&page=1&position=6) 
 * **Vectors Markets** - [*Pause Icon*](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
 * **DinosoftLabs** - [*TV Icon*](https://www.https://www.flaticon.com/free-icon/tv_716429)
