@@ -163,14 +163,16 @@ Eventually I will add other algorithms such as a conventional genetic algorithm.
 
 * **eM7RON (Simon Tucker)** - *Initial work* - [github](https://github.com/eM7RON), [linkedin](https://www.linkedin.com/in/simon-tucker-21838372/)
 
-## License
+## License & copyright
 
-This project is licensed under the MIT License
+© Simon Tucker, eM7RON  
+The code in this project is licensed under the [MIT license](https://github.com/eM7RON/ImageEvo/blob/master/license.md)  
+[*DNA Icon*](https://github.com/eM7RON/ImageEvo/blob/master/img/gfx/dna.svg) and [*Paint Image*](https://github.com/eM7RON/ImageEvo/blob/master/img/gfx/paint_img.svg) made by [Freepik](https://www.freepik.com/) from [flaticon.com](https://www.flaticon.com/) is licensed by [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
+[*Pause Icon*](https://github.com/eM7RON/ImageEvo/blob/master/img/gfx/pause_icon.svg) made by [Vectors Market](https://www.flaticon.com/authors/vectors-market) from [flaticon.com](https://www.flaticon.com/) is licensed by [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
+[*TV Icon*](https://github.com/eM7RON/ImageEvo/blob/master/img/gfx/tv_img.svg) made by [DinosoftLabs](https://www.flaticon.com/authors/dinosoftlabs) from [flaticon.com](https://www.flaticon.com/) is licensed by [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
+[*Alg Image*](https://github.com/eM7RON/ImageEvo/blob/master/img/gfx/alg_img.svg) made by [Becris](https://www.flaticon.com/authors/becris) from [flaticon.com](https://www.flaticon.com/) is licensed by [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
+
 
 ## Acknowledgments
 
 * **Moraglio, A., Chio, C.D., Toggelius, J., and Poli, R.,** - *Geometric Particle Swarm Optimization. Journal of Artiﬁcial Evolution and Applications. 2008.* - [http://dx.doi.org/doi:10.1155/2008/143624](http://dx.doi.org/doi:10.1155/2008/143624)
-* **Freepik** - [*DNA Icon*](https://www.flaticon.com/free-icon/dna_620330?term=dna%20freepik&page=1&position=6), [*Paint Image*](https://www.flaticon.com/free-icon/paint_1157969?term=paint%20palette&page=1&position=6) 
-* **Vectors Markets** - [*Pause Icon*](https://www.flaticon.com/free-icon/pause_165602?term=pause&page=3&position=94)
-* **DinosoftLabs** - [*TV Icon*](https://www.https://www.flaticon.com/free-icon/tv_716429)
-* **Becris** - [*Alg Image*](https://www.flaticon.com/free-icon/neural_2103633?term=algorithm&page=1&position=6)
