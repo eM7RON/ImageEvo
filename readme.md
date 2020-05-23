@@ -17,7 +17,7 @@ pyqt
 
 ### Installing
 
-The easiest way to create a Python environment to run this code is to install anaconda and in anaconda prompt use the commands:
+To create a Python environment to run this code is to install anaconda and in anaconda prompt use the commands:
 
 `conda create -n ImageEvo -c defaults -c conda-forge numpy scipy scikit-learn numexpr matplotlib pillow aggdraw`
 
